@@ -19,7 +19,7 @@ public class Main {
         int prezzo = P.getPrezzo();
 
         System.out.println("Nome del piatto: " + nome);
-        System.out.println(" Ecco il prezzo del piatto: " + prezzo);
+        System.out.println("Prezzo del piatto: " + prezzo + "$");
 
         scanner1.close();
 
