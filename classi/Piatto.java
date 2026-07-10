@@ -7,12 +7,12 @@ public class Piatto {
     protected String descrizione;
     protected int tempoPreparazione;
 
-    public Piatto(String nome, double prezzo, String descrizione,int tempoPreparazione) {
+    public Piatto(String nome, double prezzo, String descrizione, int tempoPreparazione) {
 
         this.nome = nome;
         this.prezzo = prezzo;
         this.descrizione = descrizione;
-        this.tempoPreparazione=tempoPreparazione;
+        this.tempoPreparazione = tempoPreparazione;
 
     }
 
@@ -51,16 +51,15 @@ public class Piatto {
     }
 
     public void setDescrizione(String nuovaDescrizione) {
-        
+
         this.descrizione = nuovaDescrizione;
 
     }
 
     public void setTempoPreparazione(int nuovoTempoPreparazione) {
-        
+
         this.tempoPreparazione = nuovoTempoPreparazione;
 
     }
-
 
 }
