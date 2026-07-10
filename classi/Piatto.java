@@ -4,6 +4,7 @@ public class Piatto {
 
     protected String nome;
     protected int prezzo = 0;
+    protected String descrizione;
 
     public Piatto() {
 
@@ -23,6 +24,11 @@ public class Piatto {
 
     }
 
+    
+    public String getDescrizione(){
+        return descrizione;        
+    }
+
     public void setNome(String nuovoNome) {
 
         this.nome = nuovoNome;
@@ -35,4 +41,7 @@ public class Piatto {
 
     }
 
+    public void setDescrizione(String nuovaDescrizione){
+        this.descrizione = nuovaDescrizione;      
+    }
 }

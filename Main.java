@@ -2,26 +2,26 @@ import java.util.Scanner;
 import classi.*;
 
 public class Main {
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
         Piatto P = new Piatto();
+
         System.out.print("Inserisci il nome del piatto: ");
-        String nuovoNome = scanner.nextLine();
-        P.setNome(nuovoNome);
-        String nome = P.getNome();
+        P.setNome(scanner.nextLine());
 
-        Scanner scanner1 = new Scanner(System.in);
         System.out.print("Inserisci il prezzo del piatto: ");
-        int nuovoPrezzo = scanner1.nextInt();
-        P.setPrezzo(nuovoPrezzo);
-        int prezzo = P.getPrezzo();
+        P.setPrezzo(scanner.nextInt());
+        scanner.nextLine();
 
-        System.out.println("Nome del piatto: " + nome);
-        System.out.println(" Ecco il prezzo del piatto: " + prezzo);
+        System.out.print("Inserisci la descrizione del piatto: ");
+        P.setDescrizione(scanner.nextLine());
 
-        scanner1.close();
+        System.out.println("Nome del piatto: " + P.getNome());
+        System.out.println("Prezzo del piatto: " + P.getPrezzo() + "$");
+        System.out.println("Descrizione del piatto: " + P.getDescrizione());
 
+        scanner.close();
     }
 }
