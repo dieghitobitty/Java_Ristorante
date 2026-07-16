@@ -31,6 +31,11 @@ public class Main {
         Dolce profiteroles = new Dolce("Profiteroles", 5.50, "Bignè con crema e cioccolato", 550, 5);
         Dolce gelato = new Dolce("Gelato artigianale", 4.50, "Gelato artigianale", 300, 2);
 
+        Bevanda cocaCola = new Bevanda("Coca cola", 2.50, "Analcolica", 330, 1);
+        Bevanda fanta = new Bevanda("Fanta", 2.50, "Analcolica", 330, 1);
+        Bevanda birra = new Bevanda("Birra", 3.5, "Alcolica", 330, 2);
+        Bevanda sprite = new Bevanda("Sprite", 2.50, "Analcolica", 330, 1);
+
         int scelta;
 
         do {
@@ -40,6 +45,7 @@ public class Main {
             System.out.println("2 - Primi");
             System.out.println("3 - Secondi");
             System.out.println("4 - Dolci");
+            System.out.println("5 - Bevande");
             System.out.println("0 - Concludi ordine");
             System.out.print("Scelta: ");
 
@@ -211,6 +217,60 @@ public class Main {
                         if (asporto == 1) {
                             costoAsporto += dolceScelto.costoConfezione();
                         }
+                    }
+
+                    break;
+
+                case 5:
+
+                    System.out.println("\n--- BEVANDE ---");
+
+                    System.out.println("1 - " + cocaCola.getNome() + " | " + cocaCola.getPrezzo() + " euro | "
+                            + cocaCola.getMl() + " ml | " + cocaCola.getTempoPreparazione() + " min");
+
+                    System.out.println("2 - " + fanta.getNome() + " | " + fanta.getPrezzo() + " euro | "
+                            + fanta.getMl() + " ml | " + fanta.getTempoPreparazione() + " min");
+
+                    System.out.println("3 - " + birra.getNome() + " | " + birra.getPrezzo() + " euro | "
+                            + birra.getMl() + " ml | " + birra.getTempoPreparazione() + " min");
+
+                    System.out.println("4 - " + sprite.getNome() + " | " + sprite.getPrezzo() + " euro | "
+                            + sprite.getMl() + " ml | " + sprite.getTempoPreparazione() + " min");
+
+                    System.out.print("Scegli una bevanda: ");
+                    int bevanda = scanner.nextInt();
+
+                    Bevanda bevandaScelta = null;
+
+                    switch (bevanda) {
+                        case 1 -> bevandaScelta = cocaCola;
+                        case 2 -> bevandaScelta = fanta;
+                        case 3 -> bevandaScelta = birra;
+                        case 4 -> bevandaScelta = sprite;
+                        default -> System.out.println("Scelta non valida.");
+                    }
+
+                    if (bevandaScelta != null) {
+
+                        ordine.aggiungiPiatto(bevandaScelta);
+
+                        int asporto;
+
+                        do {
+
+                            System.out.print("Da asporto? (1 = Si, 0 = No): ");
+                            asporto = scanner.nextInt();
+
+                            if (asporto != 0 && asporto != 1) {
+                                System.out.println("Errore: inserisci solo 0 oppure 1.");
+                            }
+
+                        } while (asporto != 0 && asporto != 1);
+
+                        if (asporto == 1) {
+                            costoAsporto += bevandaScelta.costoConfezione();
+                        }
+
                     }
 
                     break;

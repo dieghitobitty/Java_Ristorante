@@ -10,15 +10,20 @@ public class Ordine {
         piatti = new ArrayList<>();
     }
 
-    public void aggiungiPiatto(Piatto p) {
-        piatti.add(p);
+    public void aggiungiPiatto(Piatto piatto) {
+        piatti.add(piatto);
     }
 
     public void mostraOrdine() {
 
-        for (Piatto p : piatti) {
+        for (Piatto piatto : piatti) {
 
-            if (p instanceof Pizza) {
+            System.out.println(
+                        piatto.getNome() +
+                                " | " + piatto.getPrezzo() + " euro" +
+                                " | " + piatto.getTempoPreparazione() + " min");
+
+            /*if (p instanceof Pizza) {
 
                 Pizza pizza = (Pizza) p;
 
@@ -57,7 +62,7 @@ public class Ordine {
                                 " | " + dolce.getPrezzo() + " euro" +
                                 " | " + dolce.getCalorie() + " kcal" +
                                 " | " + dolce.getTempoPreparazione() + " min");
-            }
+            }*/
         }
     }
 
