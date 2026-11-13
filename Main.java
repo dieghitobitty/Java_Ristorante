@@ -36,6 +36,18 @@ public class Main {
         Bevanda birra = new Bevanda("Birra", 3.5, "Alcolica", 330, 2);
         Bevanda sprite = new Bevanda("Sprite", 2.50, "Analcolica", 330, 1);
 
+        int asporto;
+
+        do {
+            System.out.print("Ordine da asporto? (1 = Si, 0 = No): ");
+            asporto = scanner.nextInt();
+
+            if (asporto != 0 && asporto != 1) {
+                System.out.println("Errore: inserisci solo 0 oppure 1.");
+            }
+        } while (asporto != 0 && asporto != 1);
+
+        boolean ordineDaAsporto = asporto == 1;
         int scelta;
 
         do {
@@ -80,21 +92,7 @@ public class Main {
 
                     if (pizzaScelta != null) {
                         ordine.aggiungiPiatto(pizzaScelta);
-
-                        int asporto;
-
-                        do {
-
-                            System.out.print("Da asporto? (1 = Si, 0 = No): ");
-                            asporto = scanner.nextInt();
-
-                            if (asporto != 0 && asporto != 1) {
-                                System.out.println("Errore: inserisci solo 0 oppure 1.");
-                            }
-
-                        } while (asporto != 0 && asporto != 1);
-
-                        if (asporto == 1) {
+                        if (ordineDaAsporto) {
                             costoAsporto += pizzaScelta.costoConfezione();
                         }
                     }
@@ -153,21 +151,7 @@ public class Main {
 
                     if (secondoScelto != null) {
                         ordine.aggiungiPiatto(secondoScelto);
-
-                        int asporto;
-
-                        do {
-
-                            System.out.print("Da asporto? (1 = Si, 0 = No): ");
-                            asporto = scanner.nextInt();
-
-                            if (asporto != 0 && asporto != 1) {
-                                System.out.println("Errore: inserisci solo 0 oppure 1.");
-                            }
-
-                        } while (asporto != 0 && asporto != 1);
-
-                        if (asporto == 1) {
+                        if (ordineDaAsporto) {
                             costoAsporto += secondoScelto.costoConfezione();
                         }
                     }
@@ -200,21 +184,7 @@ public class Main {
 
                     if (dolceScelto != null) {
                         ordine.aggiungiPiatto(dolceScelto);
-
-                        int asporto;
-
-                        do {
-
-                            System.out.print("Da asporto? (1 = Si, 0 = No): ");
-                            asporto = scanner.nextInt();
-
-                            if (asporto != 0 && asporto != 1) {
-                                System.out.println("Errore: inserisci solo 0 oppure 1.");
-                            }
-
-                        } while (asporto != 0 && asporto != 1);
-
-                        if (asporto == 1) {
+                        if (ordineDaAsporto) {
                             costoAsporto += dolceScelto.costoConfezione();
                         }
                     }
@@ -253,21 +223,7 @@ public class Main {
                     if (bevandaScelta != null) {
 
                         ordine.aggiungiPiatto(bevandaScelta);
-
-                        int asporto;
-
-                        do {
-
-                            System.out.print("Da asporto? (1 = Si, 0 = No): ");
-                            asporto = scanner.nextInt();
-
-                            if (asporto != 0 && asporto != 1) {
-                                System.out.println("Errore: inserisci solo 0 oppure 1.");
-                            }
-
-                        } while (asporto != 0 && asporto != 1);
-
-                        if (asporto == 1) {
+                        if (ordineDaAsporto) {
                             costoAsporto += bevandaScelta.costoConfezione();
                         }
 
