@@ -14,6 +14,10 @@ public class Ordine {
         piatti.add(piatto);
     }
 
+    public boolean isVuoto() {
+        return piatti.isEmpty();
+    }
+
     public void mostraOrdine() {
 
         for (Piatto piatto : piatti) {

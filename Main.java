@@ -241,14 +241,18 @@ public class Main {
 
         } while (scelta != 0);
 
-        System.out.println("\n===== SCONTRINO =====");
+        if (ordine.isVuoto()) {
+            System.out.println("Errore: non hai aggiunto nessun piatto all'ordine.");
+        } else {
+            System.out.println("\n===== SCONTRINO =====");
 
-        ordine.mostraOrdine();
+            ordine.mostraOrdine();
 
-        System.out.println("----------------------");
-        System.out.println("Totale piatti: " + ordine.calcolaTotale() + " euro");
-        System.out.println("Costo confezioni: " + costoAsporto + " euro");
-        System.out.println("Totale finale: " + (ordine.calcolaTotale() + costoAsporto) + " euro");
+            System.out.println("----------------------");
+            System.out.println("Totale piatti: " + ordine.calcolaTotale() + " euro");
+            System.out.println("Costo confezioni: " + costoAsporto + " euro");
+            System.out.println("Totale finale: " + (ordine.calcolaTotale() + costoAsporto) + " euro");
+        }
 
         scanner.close();
     }
